@@ -346,6 +346,7 @@ p {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  width: 100%;
   margin: 0;
   padding: 10px;
   background: linear-gradient(135deg, rgb(255 255 255 / 88%), rgb(176 210 255 / 70%));
@@ -354,7 +355,6 @@ p {
   box-shadow:
     0 30px 90px rgb(0 5 22 / 53%),
     0 0 38px rgb(0 135 255 / 16%);
-  transform: perspective(1300px) rotateY(-5deg) rotateX(2deg);
 }
 
 .window-bar {
@@ -392,9 +392,11 @@ p {
 }
 
 .dashboard-frame img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1228 / 768;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   border-radius: 7px;
 }
 

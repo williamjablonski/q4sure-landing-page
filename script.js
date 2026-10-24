@@ -5,14 +5,14 @@ if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-    menuToggle.setAttribute("aria-label", isExpanded ? "Abrir menu" : "Fechar menu");
+    menuToggle.setAttribute("aria-label", isExpanded ? "Open menu" : "Close menu");
     siteNav.classList.toggle("is-open", !isExpanded);
   });
 
   siteNav.addEventListener("click", (event) => {
     if (event.target instanceof Element && event.target.closest("a")) {
       menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Abrir menu");
+      menuToggle.setAttribute("aria-label", "Open menu");
       siteNav.classList.remove("is-open");
     }
   });

@@ -761,6 +761,176 @@ p {
   font-size: 17px;
 }
 
+.imported-section {
+  padding: 100px 0 108px;
+  background:
+    radial-gradient(ellipse at 77% 48%, rgb(0 112 242 / 22%), transparent 43%),
+    linear-gradient(125deg, #05152e, #071c3a 58%, #06162d);
+}
+
+.imported-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: 58px;
+}
+
+.imported-copy h2 {
+  max-width: 510px;
+  margin-bottom: 17px;
+  font-size: clamp(34px, 3.8vw, 47px);
+  font-weight: 760;
+  letter-spacing: -2.5px;
+  line-height: 1.12;
+}
+
+.imported-copy h2 span {
+  color: var(--cyan);
+}
+
+.imported-description {
+  max-width: 490px;
+  margin-bottom: 24px;
+  color: #a9bad1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.imported-benefits {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 27px;
+  padding: 0;
+  list-style: none;
+}
+
+.imported-benefits li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 11px;
+}
+
+.imported-benefits li > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: var(--cyan);
+  background: rgb(40 131 255 / 12%);
+  border: 1px solid rgb(74 165 255 / 31%);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.imported-benefits strong,
+.imported-benefits small {
+  display: block;
+}
+
+.imported-benefits strong {
+  margin-bottom: 3px;
+  color: #edf5ff;
+  font-size: 11px;
+}
+
+.imported-benefits small {
+  color: #9db0ca;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.imported-cta {
+  min-height: 47px;
+  padding-inline: 17px;
+  font-size: 12px;
+}
+
+.imported-gallery {
+  position: relative;
+  min-width: 0;
+  padding: 18px 0 38px 28px;
+}
+
+.imported-main-visual {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0;
+  padding: 7px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 82%), rgb(150 199 255 / 60%));
+  border: 1px solid rgb(132 192 255 / 53%);
+  border-radius: 13px;
+  box-shadow: 0 28px 68px rgb(0 5 22 / 38%), 0 0 45px rgb(0 135 255 / 13%);
+}
+
+.imported-main-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+
+.imported-main-visual figcaption {
+  position: absolute;
+  right: 16px;
+  bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  color: #eaf4ff;
+  background: rgb(4 20 43 / 82%);
+  border: 1px solid rgb(177 209 247 / 17%);
+  border-radius: 7px;
+  font-size: 9px;
+  backdrop-filter: blur(8px);
+}
+
+.imported-main-visual figcaption span {
+  width: 6px;
+  height: 6px;
+  background: var(--mint);
+  border-radius: 50%;
+}
+
+.imported-inset-visual {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 43%;
+  margin: 0;
+  padding: 5px;
+  background: rgb(255 255 255 / 94%);
+  border: 1px solid rgb(168 202 244 / 74%);
+  border-radius: 10px;
+  box-shadow: 0 18px 44px rgb(0 5 22 / 45%);
+  transform: rotate(-3deg);
+}
+
+.imported-inset-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.gallery-glow {
+  position: absolute;
+  z-index: 0;
+  top: -18px;
+  right: -35px;
+  width: 65%;
+  aspect-ratio: 1;
+  background: rgb(0 127 255 / 17%);
+  border-radius: 50%;
+  filter: blur(75px);
+  pointer-events: none;
+}
+
 .workflow-section {
   padding: 105px 0 100px;
   background:
@@ -1026,8 +1196,22 @@ p {
 
   .intro-layout,
   .workflow-layout,
-  .faq-layout {
+  .faq-layout,
+  .imported-layout {
     gap: 45px;
+  }
+
+  .imported-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .imported-copy {
+    max-width: 650px;
+  }
+
+  .imported-gallery {
+    width: min(100%, 700px);
+    margin-inline: auto;
   }
 
   .workflow-layout {
@@ -1234,13 +1418,15 @@ p {
 
   .intro-layout,
   .workflow-layout,
-  .faq-layout {
+  .faq-layout,
+  .imported-layout {
     grid-template-columns: 1fr;
     gap: 21px;
   }
 
   .section-heading h2,
-  .workflow-copy h2 {
+  .workflow-copy h2,
+  .imported-copy h2 {
     font-size: clamp(33px, 9vw, 43px);
     letter-spacing: -2px;
   }
@@ -1289,6 +1475,37 @@ p {
 
   .workflow-section {
     padding-block: 73px;
+  }
+
+  .imported-section {
+    padding-block: 73px;
+  }
+
+  .imported-layout {
+    gap: 35px;
+  }
+
+  .imported-gallery {
+    width: calc(100% - 5px);
+    padding: 10px 0 27px 8px;
+  }
+
+  .imported-main-visual {
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .imported-main-visual figcaption {
+    right: 9px;
+    bottom: 9px;
+    padding: 6px 7px;
+    font-size: 8px;
+  }
+
+  .imported-inset-visual {
+    width: 48%;
+    padding: 4px;
+    border-radius: 8px;
   }
 
   .workflow-layout {

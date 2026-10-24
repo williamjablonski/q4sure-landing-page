@@ -712,6 +712,10 @@ p {
   border-bottom: 1px solid #e2eaf4;
 }
 
+.feature-image-wide {
+  aspect-ratio: 2 / 1;
+}
+
 .feature-image img {
   width: 100%;
   height: 100%;
@@ -720,8 +724,16 @@ p {
   transition: transform 400ms ease;
 }
 
+.feature-image-wide img {
+  object-fit: contain;
+}
+
 .feature-card:hover .feature-image img {
   transform: scale(1.025);
+}
+
+.feature-card:hover .feature-image-wide img {
+  transform: none;
 }
 
 .feature-copy {
